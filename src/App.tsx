@@ -1,6 +1,6 @@
 import { GlobalStyle } from './styles/GlobalStyle'
 
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { HashRouter, Route, Routes} from "react-router-dom";
 
 
 import { Greetings } from './components/Greetings'
@@ -10,13 +10,13 @@ export function App() {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter>
+      <HashRouter>
             <Routes>
-            <Route path="/main_window" element={<Greetings />}/>
+            <Route path="/" element={<Greetings />}/>
               <Route path="/login" element={<Login />} />
             </Routes>
 
-          </BrowserRouter>
+          </HashRouter>
     </>
   )
 }
