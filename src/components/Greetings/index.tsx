@@ -1,5 +1,6 @@
 import { Button } from '../Button'
 import { Container, Image, Text } from './styles'
+import { Link } from "react-router-dom";
 
 export function Greetings() {
   function handleSayHello() {
@@ -16,6 +17,7 @@ export function Greetings() {
       />
       <Text>An Electron boilerplate including TypeScript, React, Jest and ESLint.</Text>
       <Button onClick={handleSayHello}>Send message to main process</Button>
+      <Link to={`/login`}>test</Link>
     </Container>
   )
 }
