@@ -51,7 +51,7 @@ const navigate = useNavigate()
     try {
       await AuthServices.login(email, password).then(
           () => {
-              navigate("/");
+              navigate("/home");
               window.location.reload();
           },
           (error) => {

@@ -15,8 +15,8 @@ export function App() {
       <HashRouter>
         <Header />
             <Routes>
-            <Route path="/" element={<Greetings />}/>
-              <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Greetings />}/>
+              <Route path="/" element={<Login />} />
             </Routes>
       </HashRouter>
     </>

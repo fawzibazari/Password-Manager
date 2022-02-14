@@ -31,7 +31,7 @@ export function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Link to={`/login`} style={{color: "white", textDecoration: 'none'}}><Button color="inherit">Login</Button></Link>
+          <Link to={`/`} style={{color: "white", textDecoration: 'none'}}><Button color="inherit">Login</Button></Link>
         </Toolbar>
       </AppBar>
     </Box>
