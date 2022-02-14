@@ -33,7 +33,7 @@ export function Header() {
             <ArrowBackIosIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Password Manager ✌️
           </Typography>
           <Link to={`/login`} style={{color: "white", textDecoration: 'none'}}><Button onClick={logOut} color="inherit">Logout</Button></Link>
         </Toolbar>

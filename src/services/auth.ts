@@ -17,11 +17,9 @@ export class AuthServices {
 
     }
     
-
-
     static async getUser(){
         return axios.get( API_URL + 'users', {headers: authHeader() as any});
-  }
+    }
 
     static async logout() {
         localStorage.removeItem("user")
