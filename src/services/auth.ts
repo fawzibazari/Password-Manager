@@ -1,4 +1,5 @@
 import axios from "axios";
+import authHeader from "../components/Header/auth-header";
 const API_URL = "http://localhost:4000/auth/";
 
 export class AuthServices {
@@ -10,10 +11,17 @@ export class AuthServices {
             if(response.data.token) {
             localStorage.setItem("user", JSON.stringify(response.data));
             }
-            console.log(response.data)
-            return response.data.token;
+            const token = response.data.token            
+            return token;
         })
+
     }
+    
+
+
+    static async getUser(){
+        return axios.get( API_URL + 'users', {headers: authHeader() as any});
+  }
 
     static async logout() {
         localStorage.removeItem("user")

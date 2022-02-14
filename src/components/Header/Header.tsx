@@ -7,13 +7,17 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from "react-router-dom";
+import { AuthServices } from '../../services/auth';
+// import AuthHeader from './auth-header';
 
 const history = createHashHistory();
 
-console.log(history.length);
-
-
 export function Header() {
+
+  const logOut = () => {
+    AuthServices.logout();
+  };
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -31,7 +35,7 @@ export function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Link to={`/`} style={{color: "white", textDecoration: 'none'}}><Button color="inherit">Login</Button></Link>
+          <Link to={`/login`} style={{color: "white", textDecoration: 'none'}}><Button onClick={logOut} color="inherit">Logout</Button></Link>
         </Toolbar>
       </AppBar>
     </Box>
