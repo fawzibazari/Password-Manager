@@ -8,9 +8,9 @@ export class PasswordsServices {
         return axios.get( API_URL + 'getpassword', {headers: authHeader() as any});
     }
     
-    static async newPasswords(password: string, website: string){
+    static async newPasswords( website: string,password: string,){
         return axios.post( API_URL + 'addpassword',
-             {password , website},
+             {website, password},
              {headers: authHeader() as any});
     }
     

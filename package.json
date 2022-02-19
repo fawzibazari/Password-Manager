@@ -75,8 +75,8 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "Electron starter",
-        "executableName": "electron-starter",
+        "name": "Fawzi App",
+        "executableName": "Fawzi App",
         "icon": "assets/icon",
         "extraResource": [
           "assets"
