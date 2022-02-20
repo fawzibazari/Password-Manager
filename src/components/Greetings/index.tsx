@@ -11,7 +11,6 @@ import authHeader from '../Header/auth-header'
 export function Greetings() {
   const [password, setPassword] = useState('')
   const [website, setWebsite] = useState('')
-  const [showPassword, setShowPassword] = useState('Show password')
   const [passwordArray, setPasswordArray] = useState([] as any)
   const navigate = useNavigate()
 
@@ -60,7 +59,6 @@ export function Greetings() {
       .then(response => {
         setPasswordArray(
           passwordArray.map((val: any) => {
-            console.log(val)
             return val.id === encryption.id
               ? {
                   id: val.id,
@@ -114,22 +112,29 @@ export function Greetings() {
           {passwordArray.map((val: any, key: any) => {
             return (
               <>
-                <h3>{val.website}</h3>
                 <div
                   className="password"
-                  onClick={() => {
-                    decryptPassword({
-                      password: val.password,
-                      iv: val.iv,
-                      id: val.id,
-                    })
+                  style={{
+                    backgroundColor: 'rgb(130, 87, 230)',
+                    width: 159,
+                    textAlign: 'center',
+                    borderRadius: 11,
                   }}
-                  key={key}
                 >
-                  <h3>
-                    {showPassword}
-                    {val.passwordD}
-                  </h3>
+                  <h3 style={{ marginTop: 11 }}>{val.website}</h3>
+                  <button
+                    onClick={() => {
+                      decryptPassword({
+                        password: val.password,
+                        iv: val.iv,
+                        id: val.id,
+                      })
+                    }}
+                    key={key}
+                  >
+                    Show password
+                  </button>
+                  <h3>{val.passwordD}</h3>
                   <button
                     onClick={() => {
                       deletePassword(val.id)
