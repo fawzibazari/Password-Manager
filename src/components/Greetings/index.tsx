@@ -35,6 +35,10 @@ export function Greetings() {
 
   const newPassword = async (e: any) => {
     e.preventDefault()
+    if(website.length === 0 || password.length === 0) {
+        alert('le champs est vide veuillez le remplir')
+    } 
+    else {
     try {
       await PasswordsServices.newPasswords(website, password).then(
         () => {},
@@ -44,6 +48,7 @@ export function Greetings() {
       )
       window.location.reload()
     } catch (error) {}
+  }
   }
 
   const decryptPassword = (encryption: any) => {
