@@ -54,7 +54,7 @@ export function Greetings() {
   const decryptPassword = (encryption: any) => {
     axios
       .post(
-        'http://localhost:4000/decryptpassword',
+        'https://password-managerapi.herokuapp.com/decryptpassword',
         {
           password: encryption.password,
           iv: encryption.iv,
@@ -80,7 +80,7 @@ export function Greetings() {
 
   const deletePassword = (id: any) => {
     axios
-      .delete(`http://localhost:4000/${id}`, { headers: authHeader() as any })
+      .delete(`https://password-managerapi.herokuapp.com/${id}`, { headers: authHeader() as any })
       .then(response => {
         setPasswordArray(
           passwordArray.filter((val: any) => {

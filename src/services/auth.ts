@@ -1,6 +1,6 @@
 import axios from "axios";
 import authHeader from "../components/Header/auth-header";
-const API_URL = "http://localhost:4000/auth/";
+const API_URL = "https://password-managerapi.herokuapp.com/auth/";
 
 export class AuthServices {
     static async login(email: string, password: string) {
